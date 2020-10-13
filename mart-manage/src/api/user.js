@@ -1,46 +1,16 @@
-/*
- * @Author: heinan 
- * @Date: 2020-09-09 14:05:55 
- * @Last Modified by: heinan
- * @Last Modified time: 2020-09-16 10:37:04
- */
+const { request } = require('../utils/request.js')
 
-import request from '@/utils/request';
-
-export function _login({ username, password }) {
-  const url = '/user/login';
-  return request.post(url, {
-    username,
-    password
-  })
+export async function _login(acction) {
+  return await request.post('/user/login', acction)
 }
 
-export function _getIdByToken(token) {
-  const url = '/user/getUserByToken';
-  return request.get(url, {
-    params: { token }
-  })
+export async function _getUserIdByToken(token) {
+  return await request.get('/user/getUserPermissions', { params: { token } })
 }
 
-export function _getUserById(uid) {
-  const url = '/user/getUserInfo';
-  return request.get(url, {
-    params: { uid }
-  })
+export async function _getUserByToken(token) {
+  return await request.get('/user/getUserByToken', { params: { token } })
 }
-
-export function _avatarUpload({ avatarForm, uid }) {
-  const url = `/user/upload?uid=${uid}`;
-  return request.post(url, avatarForm)
-}
-
-export function _getAvatarList({ uid, pageSize, pageCount }) {
-  const url = `/user/avatarList`;
-  return request.get(url, {
-    params: {
-      uid,
-      pageSize,
-      pageCount
-    }
-  })
+export async function _getUserInfoByUid(uid) {
+  return await request.get('/user/getUserInfo', { params: { uid } })
 }

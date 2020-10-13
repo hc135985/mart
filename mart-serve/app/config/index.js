@@ -14,6 +14,12 @@ module.exports.PRODUCT_DEFAULT_SORTTYPE = 'ASC';
 module.exports.ROUTER_WHITE_LIST = [
   route('/user/login', 'POST'),
   route('/user/registry', 'POST'),
-  route('/user/getUserByToken', 'GET'),
-  route('/carousel/list', 'GET')
+  route('/carousel/list', 'GET'),
+  route('/product/list', 'GET'),
+  route('/user/getid', 'GET'),
+  route('/user/verifyCode', 'GET'),
+  route('/user/modileLogin', 'POST'),
+  route('/user/modifyPwdByMobile', 'PUT'),
+  route('/user/SendMailVerifyCode', 'GET'),
+  route('/user/modifyPwdByEmail', 'PUT')
 ];

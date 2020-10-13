@@ -1,8 +1,8 @@
 /*
  * @Author: heinan 
  * @Date: 2020-07-15 16:02:49 
- * @Last Modified by: heinan
- * @Last Modified time: 2020-07-15 17:20:18
+ * @Last Modified by: HuangChao
+ * @Last Modified time: 2020-10-13 17:10:34
  */
 'use strict';
 const { checkWhiteList, verifyToken } = require('../utils');
@@ -13,11 +13,6 @@ module.exports = function () {
     let userInfo;
     // 验证超级白名单
     if (checkWhiteList(ctx.path, ctx.method, ctx.app.config.whiteList)) {
-      await next();
-      return;
-    }
-    //如果是images的目录跳过
-    if (ctx.path.startsWith('/upload')) {
       await next();
       return;
     }
@@ -32,7 +27,7 @@ module.exports = function () {
     try {
       userInfo = await verifyToken(Authorization, JWT_KEYGEN);
     } catch (err) {
-      ctx.status = 403;
+      ctx.status = 401;
       ctx.body = { msg: '权限信息可能被篡改', code: 0 }
       return;
     }
