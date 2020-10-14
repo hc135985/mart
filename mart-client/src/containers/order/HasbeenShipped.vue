@@ -122,7 +122,7 @@ h2 {
 }
 li {
   width: 100%;
-  height: 180px;
+  height: 230px;
   border-bottom: 1px solid #ccc;
   > p {
     padding-left: 10px;

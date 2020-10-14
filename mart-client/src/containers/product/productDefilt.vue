@@ -123,8 +123,9 @@ export default {
   height: 40px;
   border-bottom: 1px solid #ccc;
 }
-dl {
+.del dl {
   width: 100%;
+  margin: 50px 0;
   img {
     width: 100%;
   }

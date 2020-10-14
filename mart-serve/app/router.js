@@ -10,17 +10,13 @@ module.exports = app => {
 
   router.post('/user/login', controller.user.login);
   router.post('/user/modileLogin', controller.user.modileLogin);
-
   router.get('/user/verifyCode', controller.user.verifyCode);
   router.post('/user/registry', controller.user.registry);
-
   router.get('/user/getUserByToken', controller.user.getUserByToken);
   router.get('/user/getUserPermissions', controller.user.getUserPermissions);
   router.get('/user/getUserInfo', controller.user.getUserInfo);
-
   router.post('/user/upload', controller.user.upload);
   router.put('/user/updataUserInfo', controller.user.updataUserInfo);
-
   router.get('/user/historyAvatar', controller.user.historyAvatar);
   router.put('/user/cutAvatar', controller.user.cutAvatar);
   //手机找回密码
@@ -39,7 +35,6 @@ module.exports = app => {
   //用户鉴权
   router.post('/identity/add', controller.user.addIdentiry)
   router.post('/identity/list', controller.user.identiryList)
-
 
   // 轮播图管理
   router.post('/carousel/add', controller.carousel.add);

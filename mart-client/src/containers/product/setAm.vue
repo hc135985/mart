@@ -1,6 +1,13 @@
 <template>
     <div>
         <h2>完成订单</h2>
+            <van-address-list
+            v-model="chosenAddressId"
+            :list="list"
+            default-tag-text="默认"
+            @add="onAdd"
+            @edit="onEdit"
+            />
         <ul>
              <li v-for="(item) in $store.state.shopList" 
              :key="item.pid + 'setAm'" v-show="item.flag">
@@ -17,13 +24,7 @@
               </dl>
             </li>
         </ul>
-        <van-address-list
-            v-model="chosenAddressId"
-            :list="list"
-            default-tag-text="默认"
-            @add="onAdd"
-            @edit="onEdit"
-            />
+
         <div class="foot">
            <span @click="addOrder(1)">支付失败</span>
            <span @click="addOrder(2)">支付成功</span>

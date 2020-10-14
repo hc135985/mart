@@ -17,8 +17,19 @@
                 <span :class="sortKey===0?'active':''" @click="getstore(0)">全部</span>
                 <span v-for="(sort,index) in sortList" :class="sortKey===index+1?'active':''" :key="sort.s_type + 'sort'" @click="getstore(++index,sort['s_type'])">{{sort.s_text}}</span>
             </div>
-            <div class="con" v-if="productList ? true:false">
-                <BScroll :pullDown="true" :pullUpLoad="true" :ScrollBar="true" :upload="onload" :loadtime="3000" :click="true" :mouseWheel="true" :onscroll="onscroll" :nestedScroll="true" type="y">
+            <div class="con">
+                <BScroll 
+                  v-if="productList.length !== 0"
+                 :pullDown="true" 
+                 :pullUpLoad="true" 
+                 :ScrollBar="true" 
+                 :upload="onload" 
+                 :loadtime="3000" 
+                 :click="true" 
+                 :mouseWheel="true" 
+                 :onscroll="onscroll" 
+                 :nestedScroll="true" 
+                 type="y">
                     <li v-for="item in productList" :key="item.pid" @click="$router.history.push(`/productdel/${item.pid}`)">
                         <dl>
                             <dt>

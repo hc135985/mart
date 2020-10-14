@@ -12,7 +12,7 @@ module.exports.PRODUCT_DEFAULT_SORTNAME = 'sales';
 module.exports.PRODUCT_DEFAULT_SORTTYPE = 'ASC';
 // 超级白名单，登录和身份都不需要验证
 module.exports.ROUTER_WHITE_LIST = [
-  route('/index.html', 'GET')
+  route('/index.html', 'GET'),
   route('/user/login', 'POST'),
   route('/user/registry', 'POST'),
   route('/user/getUserByToken', 'GET'),

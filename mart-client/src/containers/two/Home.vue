@@ -9,6 +9,7 @@
     </h4>
     <div class="home-main">
       <BScroll
+        v-if="list.length !== 0"
         :pullDown="true"
         :pullUpLoad="true"
         :ScrollBar="true"
