@@ -1,14 +1,10 @@
-/*
- * @Author: heinan 
- * @Date: 2020-09-09 15:04:41 
- * @Last Modified by: heinan
- * @Last Modified time: 2020-09-09 15:08:32
- */
-const context = require['context']('./model', false, /\.js$/);
-const getModel = context.keys().map((key) => context(key));
+const context = require.context('./model', false, /\.js$/);
+//通过context.keys()获取model目录下面的文件名
 
-export function createStore(app) {
-  getModel.forEach((model) => {
-    app.model(model.default);
-  });
+//遍历文件名，获取文件内容，返回个数组
+const getModel = context.keys().map(key => context(key));
+
+export const createModel = function (app) {
+  //遍历获取到的model数组集合,分别将每一个model绑定到 app.model()
+  return getModel.map(model => app.model(model.default))
 }
