@@ -15,5 +15,6 @@ module.exports.ROUTER_WHITE_LIST = [
   route('/user/login', 'POST'),
   route('/user/registry', 'POST'),
   route('/user/getUserByToken', 'GET'),
-  route('/carousel/list', 'GET')
+  route('/carousel/list', 'GET'),
+  route('/index.html', 'GET')
 ];

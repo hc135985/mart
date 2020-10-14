@@ -17,7 +17,7 @@ module.exports = function () {
       return;
     }
     //如果是images的目录跳过
-    if (ctx.path.startsWith('/upload')) {
+    if (ctx.path.startsWith('/upload')||ctx.path.startsWith('/public')) {
       await next();
       return;
     }
