@@ -90,6 +90,4 @@ module.exports = app => {
   // 根据加入购物车商品，随机推荐热门搜索关键字
   // router.post('/search/hot', controller.search.hot);
   // router.post('/search/history', controller.search.history);
-
-
 };

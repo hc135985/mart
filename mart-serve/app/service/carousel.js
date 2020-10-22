@@ -13,7 +13,6 @@ class CarouselService extends Service {
   async add({ tit, start_time, end_time, type }, img) {
     const cid = idCreator(tit).slice(0, 20);
     type = type || 0;
-    console.log(cid, tit, start_time, end_time, img, type)
     const $params = [cid, tit, start_time, end_time, img, type];
     const $sql = 'insert into carousel (cid,tit,start_time,end_time,img,type) values (?,?,?,?,?,?)';
     return await this.ctx.app.mysql.query($sql, $params)
