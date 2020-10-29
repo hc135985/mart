@@ -8,6 +8,7 @@
     "lint": "vue-cli-service lint"
   },
   "dependencies": {
+    "autoprefixer": "^8.6.5",
     "axios": "^0.20.0",
     "core-js": "^3.6.5",
     "hc-vue-ui": "^1.0.9",

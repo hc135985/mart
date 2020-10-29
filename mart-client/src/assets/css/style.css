@@ -10,8 +10,22 @@
 .content {
   flex: 1;
   display: flex;
+  overflow-y: scroll;
 }
 .header,
 .footer {
-  height: 60px;
+  height: 44px;
+}
+
+.footer {
+  display: flex;
+  text-align: center;
+  padding-top: 15px;
+  box-sizing: border-box;
+}
+.footer > a {
+  display: inline-block;
+  flex: 1;
+  font-size: 14px;
+  vertical-align: text-top;
 }

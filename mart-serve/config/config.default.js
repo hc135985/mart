@@ -51,7 +51,7 @@ module.exports = appInfo => {
       '.tpl': 'nunjucks',
     },
   };
-  config.middleware = ['oauth', 'gzip'];
+  config.middleware = ['oauth', 'gzip', 'spa'];
   return {
     ...config,
   };

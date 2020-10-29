@@ -1,4 +1,11 @@
-import cityarr from '@/assets/city';
+/*
+ * @Author: heinan 
+ * @Date: 2020-10-29 09:27:40 
+ * @Last Modified by:   heinan 
+ * @Last Modified time: 2020-10-29 09:27:40 
+ */
+import cityarr from '@/assets/lib/city';
+
 export default function () {
     let arr = {
         province_list: {},
@@ -24,5 +31,3 @@ export default function () {
     }
     return arr;
 }
-
-
